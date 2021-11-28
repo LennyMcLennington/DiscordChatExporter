@@ -19,6 +19,7 @@ namespace DiscordChatExporter.Core.Exporting.Filtering
             MessageContentMatchKind.Video => message.Attachments.Any(file => file.IsVideo),
             MessageContentMatchKind.Image => message.Attachments.Any(file => file.IsImage),
             MessageContentMatchKind.Sound => message.Attachments.Any(file => file.IsAudio),
+            MessageContentMatchKind.Pin => message.IsPinned,
             _ => throw new InvalidOperationException($"Unknown message content match kind '{_kind}'.")
         };
     }
