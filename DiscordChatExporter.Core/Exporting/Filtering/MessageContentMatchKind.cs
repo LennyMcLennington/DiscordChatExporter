@@ -7,6 +7,7 @@
         File,
         Video,
         Image,
-        Sound
+        Sound,
+        Pin
     }
 }
