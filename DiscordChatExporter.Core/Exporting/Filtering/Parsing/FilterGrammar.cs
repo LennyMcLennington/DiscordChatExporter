@@ -53,6 +53,7 @@ namespace DiscordChatExporter.Core.Exporting.Filtering.Parsing
                 Span.EqualToIgnoreCase("video").IgnoreThen(Parse.Return(MessageContentMatchKind.Video)),
                 Span.EqualToIgnoreCase("image").IgnoreThen(Parse.Return(MessageContentMatchKind.Image)),
                 Span.EqualToIgnoreCase("sound").IgnoreThen(Parse.Return(MessageContentMatchKind.Sound))
+                Span.EqualToIgnoreCase("pin").IgnoreThen(Parse.Return(MessageContentMatchKind.Pin))
             ))
             .Select(k => (MessageFilter) new HasMessageFilter(k))
             .Named("has:<value>");
